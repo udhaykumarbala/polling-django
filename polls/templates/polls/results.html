@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Poll {{ question.id }} Result</title>
+  </head>
+  <body>
+      <h1>Results of Poll {{ question.id }}</h1>
+      <h2>{{ question.question_text }}</h2>
+      <ol>
+      {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} --> {{ choice.votes }}</li>
+      {% endfor %}
+      </ol>
+  </body>
+</html>
